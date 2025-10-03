@@ -1,25 +1,17 @@
 const path = require('path')
 
 module.exports = {
+  mode: 'production',
   entry: './js/dashboard_main.js',
   output: {
-    path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public'),
   },
-  mode: 'production',
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              url: true,
-            },
-          },
-        ],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
@@ -27,29 +19,17 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/images/[name].[ext]',
+              name: '[name].[hash].[ext]',
+              outputPath: 'assets/',
             },
           },
           {
             loader: 'image-webpack-loader',
             options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 80,
-              },
-              optipng: {
-                enabled: true,
-              },
-              pngquant: {
-                quality: [0.65, 0.9],
-                speed: 4,
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              webp: {
-                quality: 80,
-              },
+              mozjpeg: { progressive: true },
+              optipng: { enabled: true },
+              pngquant: { quality: [0.65, 0.9], speed: 4 },
+              gifsicle: { interlaced: false },
             },
           },
         ],
