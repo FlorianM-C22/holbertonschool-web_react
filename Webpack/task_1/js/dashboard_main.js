@@ -9,8 +9,9 @@ $('body').append('<p id="count">0</p>')
 
 $('body').append('<p>Copyright - Holberton School</p>')
 
+let count = 0
+
 function updateCounter() {
-  let count = 0
   count++
   $('#count').text(`${count} clicks on the button`)
 }
