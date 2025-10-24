@@ -1,0 +1,12 @@
+.notification-items {
+  border: 2px dotted #e1003c;
+  padding: 10px;
+  margin: 10px;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.notification-items P {
+    padding: 0 0 0 1rem;
+}
