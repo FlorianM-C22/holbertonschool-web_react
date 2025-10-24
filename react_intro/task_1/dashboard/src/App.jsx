@@ -1,12 +1,12 @@
 import './App.css'
 import logo from './assets/holberton-logo.jpg'
 import { getCurrentYear, getFooterCopy } from './utils'
-import { Notifications } from './Notifications'
+import Notifications from './Notifications'
 
 function App() {
   return (
     <>
-      <div className='root-notifications'>
+      <div className="root-notifications">
         <Notifications />
       </div>
       <div className="App-header">
