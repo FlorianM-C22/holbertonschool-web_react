@@ -1,4 +1,4 @@
-.Notifications {
+.notification-items {
   border: 2px dotted #e1003c;
   padding: 10px;
   margin: 10px;
@@ -7,6 +7,6 @@
   color: #333;
 }
 
-.Notifications P {
+.notification-items P {
     padding: 0 0 0 1rem;
 }
