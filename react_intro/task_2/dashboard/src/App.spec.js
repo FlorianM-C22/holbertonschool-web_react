@@ -26,7 +26,7 @@ describe('App', () => {
     expect(image).toBeInTheDocument();
   });
 
-  test('renders two input elements', () => {
+  test('renders two input elements (one for email and the other for password)', () => {
     render(<App />);
     const emailInput = screen.getByLabelText(/email/i);
     const passwordInput = screen.getByLabelText(/password/i);
@@ -34,7 +34,7 @@ describe('App', () => {
     expect(passwordInput).toBeInTheDocument();
   });
 
-  test('renders two label elements with text Email and Password', () => {
+  test('renders 2 label elements with the text Email and Password', () => {
     render(<App />);
     const emailLabel = screen.getByText(/email/i);
     const passwordLabel = screen.getByText(/password/i);
