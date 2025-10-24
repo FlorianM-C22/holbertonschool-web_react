@@ -2,7 +2,7 @@ import './Notifications.css'
 
 export function Notifications() {
     return (
-        <div className="notification-items">
+        <div className="notifications">
             <p>Here is the list of notifications</p>
         </div>
     )
