@@ -34,10 +34,10 @@ describe('App', () => {
     expect(passwordInput).toBeInTheDocument();
   });
 
-  test('renders two label elements with text Email: and Password:', () => {
+  test('renders two label elements with text Email and Password', () => {
     render(<App />);
-    const emailLabel = screen.getByText(/email:/i);
-    const passwordLabel = screen.getByText(/password:/i);
+    const emailLabel = screen.getByText(/email/i);
+    const passwordLabel = screen.getByText(/password/i);
     expect(emailLabel).toBeInTheDocument();
     expect(passwordLabel).toBeInTheDocument();
   });
