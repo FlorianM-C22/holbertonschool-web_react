@@ -1,6 +1,6 @@
-import Header from './Header/Header'
-import Login from './Login/Login'
-import Footer from './Footer/Footer'
+import Header from '../Header/Header'
+import Login from '../Login/Login'
+import Footer from '../Footer/Footer'
 import './App.css'
 
 function App() {
