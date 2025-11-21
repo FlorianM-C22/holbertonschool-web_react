@@ -26,7 +26,7 @@ export default function Notifications({ notifications }) {
             width: "0.5rem",
             height: "0.5rem",
           }}
-          src={ closebtn } alt='CLose' />
+          src={ closebtn } alt='Close' />
         </button>
         <ul>
           {notifications.map((notification) => (
