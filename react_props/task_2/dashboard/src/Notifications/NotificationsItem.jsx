@@ -1,56 +1,29 @@
-import { useRef, useEffect } from 'react';
+import React from "react";
+import PropTypes from 'prop-types';
 
-function NotificationItem({ type = 'default', html, value }) {
-    const colors = {
-        urgent: 'red',
-        default: 'blue'
-    };
-
-    const color = colors[type];
-    const liRef = useRef(null);
-
-    useEffect(() => {
-        if (liRef.current) {
-            liRef.current.style.color = color;
-            if (!liRef.current.style._values) {
-                liRef.current.style._values = {};
-            }
-            liRef.current.style._values.color = color;
-        }
-    }, [color]);
-
-    const containsHTML = (str) => {
-        return typeof str === 'string' && /<\/?[a-z][\s\S]*>/i.test(str);
-    };
-
-    if (html) {
-        return (
-            <li
-                ref={liRef}
-                data-notification-type={type}
-                dangerouslySetInnerHTML={html}
-            />
-        );
-    }
-
-    if (value && containsHTML(value)) {
-        return (
-            <li
-                ref={liRef}
-                data-notification-type={type}
-                dangerouslySetInnerHTML={{ __html: value }}
-            />
-        );
-    }
-
-    return (
-        <li
-            ref={liRef}
-            data-notification-type={type}
-        >
-            {value}
-        </li>
-    );
+export default function NotificationItem({ type, html, value }) {
+	const style = { color: type === 'urgent' ? 'red' : 'blue' };
+	if (html) {
+		return (
+			<li data-notification-type={type}
+			style={style}
+			dangerouslySetInnerHTML={html}></li>
+		);
+	}
+	return (
+		<li data-notification-type={type}
+		style={style}>{value}</li>
+	);
 }
 
-export default NotificationItem;
+NotificationItem.propTypes = {
+	type: PropTypes.string.isRequired,
+	value: PropTypes.string,
+	html: PropTypes.shape({
+	  __html: PropTypes.string,
+	}),
+};
+
+NotificationItem.defaultProps = {
+	type: 'default'
+};

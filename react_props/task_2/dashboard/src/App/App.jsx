@@ -2,6 +2,7 @@ import Header from '../Header/Header'
 import Login from '../Login/Login'
 import Footer from '../Footer/Footer'
 import Notifications from '../Notifications/Notifications'
+import { getLatestNotification } from '../utils/utils'
 import './App.css'
 
 const notificationsList = [
@@ -18,7 +19,7 @@ const notificationsList = [
   {
       id: 3,
       type: 'urgent',
-      value: '<strong>Urgent requirement</strong> - complete by EOD'
+      html: { __html: getLatestNotification() }
   }
 ];
 
