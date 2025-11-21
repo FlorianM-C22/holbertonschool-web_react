@@ -1,0 +1,11 @@
+.Login-body {
+    padding: 30px 20px;
+    min-height: calc(100vh - 200px);
+  }
+  
+  .Login-body p {
+    color: black;
+    font-size: 1rem;
+    font-family: sans-serif;
+    padding: 30px;
+  }
