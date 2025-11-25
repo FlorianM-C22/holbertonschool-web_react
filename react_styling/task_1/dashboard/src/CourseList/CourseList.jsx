@@ -6,7 +6,7 @@ class CourseList extends React.Component {
   render() {
     const { courses = [] } = this.props
     return (
-      <div className="w-[80%] mx-auto">
+      <div className="courses mx-auto w-4/5">
         <table id="CourseList" className="w-full">
           {courses.length > 0 ? (
             <>
