@@ -2,9 +2,9 @@ import logo from '../assets/holberton-logo.jpg'
 
 export default function Header() {
   return (
-    <div className="App-header flex items-center justify-between py-2">
-      <img src={logo} className="App-logo h-60 pointer-events-none" alt="holberton logo" />
-      <h1 className="font-bold text-main-color text-5xl">School Dashboard</h1>
-    </div>
+    <header className="flex flex-wrap items-center gap-6 py-6">
+      <img src={logo} className="h-28 w-auto shrink-0" alt="Holberton School logo" />
+      <h1 className="text-4xl font-extrabold text-[color:var(--main-color)]">School Dashboard</h1>
+    </header>
   )
 }
